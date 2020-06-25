@@ -2,17 +2,18 @@
     <string name="app_name">MovieMU</string>
 
     <string name="sp1">MovieMU</string>
-    <string name="sp2">You Movie Is You Life</string>
+    <string name="sp2">Your Movie Is Your Life</string>
 
     <string name="next">LANJUT</string>
     <string name="skip">LEWATI</string>
     <string name="start">MULAI</string>
 
     <string name="slide_1_desc">Menampilkan Rating Dari Sebuah Film</string>
-
     <string name="slide_2_desc">Menampilkan Genre Dari Sebuah Film</string>
-
     <string name="slide_3_desc">Menampilkan Semua Pemeran Film Dari Sebuah Film</string>
-
     <string name="slide_4_desc">Menampilkan Trailer Dari Sebuah Film</string>
+
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="about">About</string>
 </resources>
