@@ -16,4 +16,8 @@
     <string name="home">Home</string>
     <string name="search">Search</string>
     <string name="about">About</string>
+
+    <string name="shint">Enter title...</string>
+
+
 </resources>
