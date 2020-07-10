@@ -7,7 +7,7 @@
     android:background="@color/bg"
     tools:context=".MainActivity" >
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageView100"
         android:layout_width="381dp"
         android:layout_height="218dp"
@@ -15,7 +15,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:src="@drawable/logo"
+        android:src="@drawable/logoapp"
         app:civ_border_color="@color/white"
         app:civ_border_width="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,22 +24,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.356" />
 
-    <TextView
-        android:id="@+id/textView100"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="@string/sp1"
-        android:textColor="@color/white"
-        android:textSize="36sp"
-        app:fontFamily="@font/sweetystrawberry"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView100" />
+
 
     <TextView
         android:id="@+id/textView200"
@@ -47,15 +32,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="@string/sp2"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="40sp"
         app:fontFamily="@font/startrack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView100" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView100" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

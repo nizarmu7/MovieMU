@@ -2,59 +2,47 @@ package com.akb.moviemu;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.akb.moviemu.Fragment.AboutFragment;
-import com.akb.moviemu.Fragment.HomeFragment;
-import com.akb.moviemu.Fragment.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // kita set default nya Home Fragment
-        loadFragment(new HomeFragment());
-        // inisialisasi BottomNavigaionView
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bn_main);
-        // beri listener pada saat item/menu bottomnavigation terpilih
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
 
-    }
+        bottomNavigationView.setSelectedItemId(R.id.navigation_trending);
 
-    private boolean loadFragment(Fragment fragment) {
-        if (fragment != null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fl_container, fragment)
-                    .commit();
-            return true;
-        }
-        return false;
-    }
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.navigation_trending:
+                    return true;
+                    case R.id.navigation_search:
+                        startActivity(new Intent(getApplicationContext()
+                                ,SearchActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_favorites:
+                        startActivity(new Intent(getApplicationContext()
+                                ,FavoritesActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
-    // method listener untuk logika pemilihan
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Fragment fragment = null;
-        switch (item.getItemId()){
-            case R.id.home_menu:
-                fragment = new HomeFragment();
-                break;
-            case R.id.search_menu:
-                fragment = new SearchFragment();
-                break;
-            case R.id.about_menu:
-                fragment = new AboutFragment();
-                break;
-        }
-        return loadFragment(fragment);
+
     }
 
     @Override
@@ -79,11 +67,5 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
 
-    private void showSystemUI() {
-        View decorView = getWindow().getDecorView();
-        decorView.setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-    }
+
 }
