@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.akb.moviemu">
 
-    <dist:module dist:instant="true" />
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_moviemu"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_moviemu_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".FavoritesActivity"></activity>
+        android:theme="@style/AppTheme">
+        <activity android:name=".AboutActivity"></activity>
         <activity android:name=".SearchActivity" />
+        <activity android:name=".DetailActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".Walkthrough.WalkthroughActivity" />
         <activity android:name=".MainActivity">
@@ -25,6 +25,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

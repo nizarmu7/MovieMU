@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.akb.moviemu.HomeActivity;
-import com.akb.moviemu.MainActivity;
 import com.akb.moviemu.PrefManager;
 import com.akb.moviemu.R;
 
