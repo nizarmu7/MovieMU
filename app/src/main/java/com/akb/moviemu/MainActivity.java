@@ -5,10 +5,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.akb.moviemu.Walkthrough.WalkthroughActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+    Animation topAnim,bottomAnim;
+    ImageView logo;
+    TextView slogan;
 
     //lama waktu tampil splash screen
     private int waktu_load = 2500;
@@ -26,6 +34,15 @@ public class MainActivity extends AppCompatActivity {
             }
         },waktu_load);
 
+        topAnim = AnimationUtils.loadAnimation(this,R.anim.top);
+        bottomAnim = AnimationUtils.loadAnimation(this,R.anim.bottom);
+
+
+        logo = findViewById(R.id.imageView100);
+        slogan = findViewById(R.id.textView200);
+
+        logo.setAnimation(topAnim);
+        slogan.setAnimation(bottomAnim);
 
     }
 

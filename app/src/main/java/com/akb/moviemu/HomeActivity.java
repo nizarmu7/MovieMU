@@ -69,16 +69,13 @@ public class HomeActivity extends AppCompatActivity implements BottomSheetListen
                 switch (menuItem.getItemId()){
                     case R.id.home_menu:
                         return true;
-                    case R.id.search_menu:
-                        startActivity(new Intent(getApplicationContext()
-                                ,SearchActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
                     case R.id.about_menu:
                         startActivity(new Intent(getApplicationContext()
                                 ,AboutActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         return true;
+                    case R.id.exit_menu:
+                        finishAffinity();
                 }
                 return false;
             }
@@ -304,7 +301,7 @@ public class HomeActivity extends AppCompatActivity implements BottomSheetListen
             loadUpcomingMoviesListData();
 
         } else {
-            Log.e("HomeActivity-MenuClick", "Tıklama İşleyici Hatası");
+            Log.e("HomeActivity-MenuClick", "Terjadi Kesalahan");
         }
     }
 

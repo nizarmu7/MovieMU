@@ -19,25 +19,21 @@ public class AboutActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
 
-        bottomNavigationView.setSelectedItemId(R.id.search_menu);
+        bottomNavigationView.setSelectedItemId(R.id.about_menu);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.home_menu:
-
                         startActivity(new Intent(getApplicationContext()
                                 ,HomeActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.search_menu:
-                        startActivity(new Intent(getApplicationContext()
-                                ,SearchActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                         return true;
                     case R.id.about_menu:
                         return true;
+                    case R.id.exit_menu:
+                        finishAffinity();
                 }
                 return false;
             }

@@ -15,17 +15,16 @@
 
     <string name="home">Home</string>
     <string name="about">About</string>
-    <string name="search">Search</string>
+    <string name="exit">Exit</string>
 
-    <string name="shint">Enter title...</string>
-
-    <string name="trending">Trending</string>
-
-    <string name="favorites">Favorites</string>
 
     <string name="top_rated">Top Rated</string>
     <string name="upcoming">Upcoming</string>
     <string name="popular">Popular</string>
+
+    <string name="versi">Versi 1.0.0</string>
+    <string name="deskripsi">MovieMU adalah aplikasi yang menampilkan informasi sebuah film secara online.</string>
+    <string name="thanks">Thanks To</string>
 
 
 </resources>

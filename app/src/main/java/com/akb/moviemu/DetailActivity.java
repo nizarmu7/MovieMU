@@ -135,7 +135,7 @@ public class DetailActivity extends AppCompatActivity {
 
         } else {
 
-            Log.e("DetailActivity", "Intent Eksik Veri");
+            Log.e("DetailActivity", "Data Tidak Ada");
 
         }
         /* Bundle Son */
